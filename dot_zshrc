@@ -1,3 +1,23 @@
+############################
+# OH MY ZSH CONFIGURATION
+############################
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Removing auto update
+zstyle ':omz:update' mode disabled
+
+# oh-my-zsh plugins
+plugins=(git docker)
+
+# Source oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
+
+############################
+# SHELL UTILS
+############################
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -9,6 +29,10 @@ eval "$(starship init zsh)"
 
 # Make nvim the default CLI editor
 export EDITOR="nvim"
+
+############################
+# LOCAL CONFIGURATION
+############################
 
 #### BELOW SHOULD BE MADE INTO A TEMPLATE
 

@@ -39,3 +39,10 @@ url = "https://github.com/paulirish/git-open/archive/refs/heads/master.zip"
 exact = true
 stripComponents = 1
 refreshPeriod = "168h"
+
+[".oh-my-zsh/custom/themes/powerlevel10k"]
+type = "archive"
+url = "https://github.com/romkatv/powerlevel10k/archive/refs/heads/master.zip"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"

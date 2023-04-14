@@ -48,6 +48,22 @@ source $ZSH/oh-my-zsh.sh
 # SHELL UTILS
 ############################
 
+# https://github.com/marlonrichert/zsh-autocomplete#reset-history-key-bindings-to-zsh-default
+# Removing autocomplete search on up/down
+bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+() {
+   local -a prefix=( '\e'{\[,O} )
+   local -a up=( ${^prefix}A ) down=( ${^prefix}B )
+   local key=
+   for key in $up[@]; do
+      bindkey "$key" up-line-or-history
+   done
+   for key in $down[@]; do
+      bindkey "$key" down-line-or-history
+   done
+}
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -55,7 +71,7 @@ source $ZSH/oh-my-zsh.sh
 eval "$(zoxide init zsh)"
 
 # Atuin shell history
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # Make nvim the default CLI editor
 export EDITOR="nvim"

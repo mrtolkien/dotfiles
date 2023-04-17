@@ -47,8 +47,8 @@ eval "$(atuin init zsh)"
 # Starship prompt
 eval "$(starship init zsh)"
 
-# Make nvim the default CLI editor
-export EDITOR="nvim"
+# Make helix the default CLI editor
+export EDITOR="hx"
 
 ############################
 # ALIASES
@@ -60,19 +60,12 @@ alias la="exa -la"
 alias tree="exa -T"
 
 ############################
-# LOCAL CONFIGURATION
+# LOCAL CONFIGURATIONS
 ############################
 
-############################
-# Macbook Pro M2
-############################
 {{- if eq .chezmoi.hostname "Garys-MacBook-Pro" }}
-# TODO Make pyenv asynchronous (too costly) / move to other env tool?
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# Fixing an error I had with psql
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+############################
+# MacBook Pro
+############################
+eval "$(/Users/tolki/.local/share/rtx/bin/rtx activate zsh)"
 {{- end }}

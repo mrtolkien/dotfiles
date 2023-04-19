@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -f "${HOME}/chezmoi_key.txt" ]; then
-    age --decrypt --output "${HOME}/chezmoi_key.txt" "{{ .chezmoi.sourceDir }}/chezmoi_key.txt.age"
-    chmod 600 "${HOME}/chezmoi_key.txt"
+if [ ! -f "${HOME}/.config/chezmoi/age_key.txt" ]; then
+    age --decrypt --output "${HOME}/.config/chezmoi/age_key.txt" "{{ .chezmoi.sourceDir }}/chezmoi_key.txt.age"
+    chmod 600 "${HOME}/.config/chezmoi/age_key.txt"
 fi

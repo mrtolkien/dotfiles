@@ -14,6 +14,14 @@ plugins=(
     zsh-autosuggestions 
 )
 
+
+{{- if not eq .chezmoi.hostname "dockerz" }}
+plugins+=(
+    # This was causing issues on dockerz
+    zsh-autocomplete
+)
+{{- end}}
+
 {{- if eq .chezmoi.hostname "Garys-MacBook-Pro" }}
 plugins+=(
     git-open
@@ -22,8 +30,6 @@ plugins+=(
     docker-compose
     aws 
     poetry
-    # This was causing issues on a Debian server
-    zsh-autocomplete
 ) 
 {{- end }}
 

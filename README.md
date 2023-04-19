@@ -1,5 +1,22 @@
 # Tolki's Dotfiles
 
+## TL;DR
+
+## Install dependencies
+
+```sh
+nix-env -iA nixpkgs.bitwarden-cli nixpkgs.chezmoi
+```
+
+## Setup chezmoi
+
+```sh
+export BW_SESSION=$(bw unlock --raw)
+chezmoi apply
+```
+
+## Software list
+
 Configures and installs:
 
 - [`zsh`](https://www.zsh.org/)

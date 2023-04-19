@@ -47,6 +47,9 @@ eval "$(atuin init zsh)"
 # Starship prompt
 eval "$(starship init zsh)"
 
+# Bitwarden cli completions
+eval "$(bw completion --shell zsh); compdef _bw bw;"
+
 # Make helix the default CLI editor
 export EDITOR="hx"
 

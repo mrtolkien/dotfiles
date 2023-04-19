@@ -52,6 +52,8 @@ nix-env -iA \
     nixpkgs.zsh
 ```
 
+If needed, make `zsh` the default shell:
+
 ```sh
 chsh -s `which zsh`
 ```
@@ -65,16 +67,20 @@ chezmoi init mrtolkien
 chezmoi apply
 ```
 
-### Additional `nix` installs for dev machines
+### Additional installs for dev machines
 
-TODO
+`rtx` for runtime environments management and dev tools:
 
 ```sh
+curl https://rtx.pub/install.sh | sh
 ```
+
+TODO: `lazygit`, `python`, `poetry`, `dbmate`, `gh`, `hugo`, `pulumi` can all be installed by both `rtx` and `nix-env`. Which is best for which?
 
 ## Software list
 
-TODO
+TODO: Make software list and explain what they do
+
 Configures and installs:
 
 - [`zsh`](https://www.zsh.org/)

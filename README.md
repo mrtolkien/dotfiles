@@ -2,19 +2,63 @@
 
 ## TL;DR
 
-## Install dependencies
+### Install `nix`
 
 ```sh
-nix-env -iA nixpkgs.bitwarden-cli nixpkgs.chezmoi
+curl -L https://nixos.org/nix/install | sh -s -- --daemon
 ```
 
-## Setup chezmoi
+### CLI programs
+
+```sh
+nix-env -iA \
+    nixpkgs.age \
+    nixpkgs.atuin \
+    nixpkgs.bat \
+    nixpkgs.bitwarden-cli \
+    nixpkgs.bottom \
+    nixpkgs.chezmoi \
+    nixpkgs.erdtree \
+    nixpkgs.exa \
+    nixpkgs.fd \
+    nixpkgs.helix \
+    nixpkgs.ripgrep
+    nixpkgs.starship \
+    nixpkgs.zoxide
+```
+
+### Setup chezmoi
 
 ```sh
 bw sync
 export BW_SESSION=$(bw unlock --raw)
 chezmoi init mrtolkien
 chezmoi apply
+```
+
+## Other `nix` installs
+
+### CLI tools
+
+## Flow
+
+```mermaid
+flowchart TD
+    A(Install nix)
+    AA("Install dependencies")
+    B[( BitWarden CLI )]
+    BB[[ 2FA with Authy ]]
+    C("Setup dotfiles with chezmoi")
+    D( Decrypt secrets with age )
+
+    A --> AA --> C --> D
+    AA --> B
+    BB --> B --> D
+
+    subgraph Bitwarden
+        B
+        BB
+    end
 ```
 
 ## Software list

@@ -11,7 +11,9 @@ nix-env -iA nixpkgs.bitwarden-cli nixpkgs.chezmoi
 ## Setup chezmoi
 
 ```sh
+bw sync
 export BW_SESSION=$(bw unlock --raw)
+chezmoi init mrtolkien
 chezmoi apply
 ```
 

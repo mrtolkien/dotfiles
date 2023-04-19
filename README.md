@@ -21,10 +21,13 @@ nix-env -iA \
     nixpkgs.erdtree \
     nixpkgs.exa \
     nixpkgs.fd \
+    nixpkgs.git \
     nixpkgs.helix \
-    nixpkgs.ripgrep
+    nixpkgs.tealdeer \
+    nixpkgs.ripgrep \
     nixpkgs.starship \
-    nixpkgs.zoxide
+    nixpkgs.zoxide \
+    nixpkgs.zsh
 ```
 
 ### Setup chezmoi

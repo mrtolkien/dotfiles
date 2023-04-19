@@ -42,6 +42,7 @@ nix-env -iA \
     nixpkgs.erdtree \
     nixpkgs.exa \
     nixpkgs.fd \
+    nixpkgs.fzf \
     nixpkgs.git \
     nixpkgs.helix \
     nixpkgs.tealdeer \

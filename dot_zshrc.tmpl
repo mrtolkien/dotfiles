@@ -9,24 +9,26 @@ zstyle ':omz:update' mode disabled
 
 # oh-my-zsh plugins
 plugins=(
-    git
-    docker 
-    docker-compose
-    aws 
-    gh 
-    poetry 
     ripgrep 
     zsh-syntax-highlighting 
     zsh-autosuggestions 
-    zsh-autocomplete
-    git-open
 )
+
+{{- if eq .chezmoi.hostname "Garys-MacBook-Pro" }}
+plugins+=(
+    git-open
+    gh 
+    docker 
+    docker-compose
+    aws 
+    poetry
+    # This was causing issues on a Debian server
+    zsh-autocomplete
+) 
+{{- end }}
 
 # Plugin settings
 zstyle ':autocomplete:*' min-delay 0.05  # seconds (float)
-
-# zsh-completions have to be loaded a bit differently
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 # Source oh-my-zsh.sh
 source $ZSH/oh-my-zsh.sh
@@ -67,9 +69,5 @@ alias tree="exa -T"
 ############################
 
 {{- if eq .chezmoi.hostname "Garys-MacBook-Pro" }}
-############################
-# MacBook Pro
-############################
 eval "$(/Users/tolki/.local/share/rtx/bin/rtx activate zsh)"
-
 {{- end }}

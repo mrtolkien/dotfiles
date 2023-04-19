@@ -58,8 +58,8 @@ chsh -s `which zsh`
 ### Setup dotfiles with chezmoi
 
 ```sh
-bw sync
 export BW_SESSION=$(bw unlock --raw)
+bw sync
 chezmoi init mrtolkien
 chezmoi apply
 ```

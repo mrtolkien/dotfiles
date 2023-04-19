@@ -1,4 +1,5 @@
 --sort name
+--dirs-first
 
 --disk-usage physical
 

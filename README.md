@@ -48,6 +48,7 @@ nix-env -iA \
     nixpkgs.tealdeer \
     nixpkgs.ripgrep \
     nixpkgs.starship \
+    nixpkgs.zellij \
     nixpkgs.zoxide \
     nixpkgs.zsh
 ```
@@ -75,16 +76,30 @@ chezmoi apply
 curl https://rtx.pub/install.sh | sh
 ```
 
-TODO: `lazygit`, `python`, `poetry`, `dbmate`, `gh`, `hugo`, `pulumi` can all be installed by both `rtx` and `nix-env`. Which is best for which?
+Might move on to fully using `nix` for dev dependencies too!
+
+<!-- TODO: `lazygit`, `python`, `poetry`, `dbmate`, `gh`, `hugo`, `pulumi` can all be installed by both `rtx` and `nix-env`. Which is best for which? -->
 
 ## Software list
 
-TODO: Make software list and explain what they do
-
-Configures and installs:
-
-- [`zsh`](https://www.zsh.org/)
-- [`oh-my-zsh`](https://ohmyz.sh/)
-- [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting.git), [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions), [`z`](https://github.com/agkozak/zsh-z), [`zsh-interactive-cd`](https://github.com/changyuheng/zsh-interactive-cd)
-- [`fzf`](https://github.com/junegunn/fzf)
-- Starship
+- [`chezmoi`](https://www.chezmoi.io/) - Dotfiles management
+  - Secrets are stored in [Bitwarden](https://bitwarden.com/) and encrypted with [`age`](https://github.com/FiloSottile/age)
+- [`nix-env`](https://nix.dev/) - Packages management
+  - Will start to use `nix-darwin` soon
+- [Alacritty](https://github.com/alacritty/alacritty) - Terminal Emulator
+  - Fast, dotfile-based configuration, multiplatform, full borderless mode
+- [`zsh`](https://www.zsh.org/) - Shell
+  - POSIX-compliant but easier to mod than bash
+- [Starship](https://starship.rs/) - Rust multi-shell multi-platform prompt
+  - No instant prompt mode like Powerlevel10k but less "hacky"
+- [`oh-my-zsh`](https://ohmyz.sh/) - Plugins framework
+  - Does its job well and is [not as slow as some people think](https://github.com/romkatv/zsh-bench/blob/master/doc/linux-desktop.md)
+  - Basic plugins: [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting.git), [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions)
+- [`atuin`](https://atuin.sh/) - Multi-machines shell history + search
+- [`zellij`](https://zellij.dev/) - Terminal workspace (`tmux` replacement)
+- [`ripgrep`](https://github.com/BurntSushi/ripgrep) - Multi-threaded `grep` replacement, ~10x faster and better looking
+- [`fd`](https://github.com/sharkdp/fd) - Simple, fast, and user-friendly alternative to `find`
+- [`bottom`](https://github.com/ClementTsang/bottom), [`exa`](https://github.com/ogham/exa), [`bat`](https://github.com/sharkdp/bat), [`erdtree`](https://github.com/solidiquis/erdtree#configuration-file)
+  - `top`, `ls`, `cat`, `tree` replacements with colors, syntax highlighting, better performance, ...
+- [`tealdeer`](https://github.com/dbrgn/tealdeer) - Better `man` pages (`tldr` Rust rewrite)
+- [`zoxide`](https://github.com/ajeetdsouza/zoxide) - Instant directory jumping with fuzzy matching (`z` Rust rewrite)

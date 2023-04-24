@@ -90,7 +90,7 @@ Might move on to fully using `nix` for dev dependencies too!
   - Fast, dotfile-based configuration, multiplatform, full borderless mode
 - [`zsh`](https://www.zsh.org/) - Shell
   - POSIX-compliant but easier to mod than bash
-- [Starship](https://starship.rs/) - Rust multi-shell multi-platform prompt
+- [`starship`](https://starship.rs/) - Multi-shell multi-platform prompt
   - No instant prompt mode like Powerlevel10k but less "hacky"
 - [`oh-my-zsh`](https://ohmyz.sh/) - Plugins framework
   - Does its job well and is [not as slow as some people think](https://github.com/romkatv/zsh-bench/blob/master/doc/linux-desktop.md)

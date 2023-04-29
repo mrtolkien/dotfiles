@@ -17,7 +17,7 @@ flowchart TD
     AA --> B
     BB --> B --> D
 
-    subgraph Bitwarden
+    subgraph "Bitwarden (optional)"
         B
         BB
     end
@@ -62,9 +62,15 @@ chsh -s `which zsh`
 ### Setup dotfiles with chezmoi
 
 ```sh
+chezmoi init mrtolkien
+chezmoi apply
+```
+
+`chezmoi apply` requires `.config/chezmoi/age_key.txt` to exist. It can be created by commenting out relevant lines in the `.chezmoiignore` and running:
+
+```sh
 export BW_SESSION=$(bw unlock --raw)
 bw sync
-chezmoi init mrtolkien
 chezmoi apply
 ```
 

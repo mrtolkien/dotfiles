@@ -1,4 +1,7 @@
+# This is a list of files to not re-create in ~
 README.md
-
 .oh-my-zsh/cache/*
-chezmoi_key.txt.age
+
+# The next files are templates for SSH keys and encryption
+.ssh/keys/*
+.config/chezmoi/age_key.txt

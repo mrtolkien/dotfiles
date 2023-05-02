@@ -14,17 +14,8 @@ plugins=(
     zsh-autosuggestions 
 )
 
-
-{{- if ne .chezmoi.hostname "dockerz" }}
-# ZSH autocomplete
-plugins+=(
-    # This was causing issues on dockerz
-    zsh-autocomplete
-)
-zstyle ':autocomplete:*' min-delay 0.05  # seconds (float)
-{{- end}}
-
 {{- if eq .chezmoi.hostname "Garys-MacBook-Pro" }}
+# Extra plugins for dev machine
 plugins+=(
     git-open
     gh 
@@ -54,15 +45,8 @@ eval "$(atuin init zsh)"
 # Starship prompt
 eval "$(starship init zsh)"
 
-# Bitwarden cli completions
-eval "$(bw completion --shell zsh); compdef _bw bw;"
-
-# Zellij auto-start
-# export ZELLIJ_AUTO_ATTACH=true
-# eval "$(zellij setup --generate-auto-start zsh)"
-
-# Make helix the default CLI editor
-export EDITOR="hx"
+# Make nvim the default CLI editor
+export EDITOR="nvim"
 
 ############################
 # ALIASES

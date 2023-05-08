@@ -39,3 +39,11 @@ url = "https://github.com/paulirish/git-open/archive/refs/heads/master.zip"
 exact = true
 stripComponents = 1
 refreshPeriod = "168h"
+
+[".config/alacritty/themes"]
+type = "archive"
+url = "https://github.com/alacritty/alacritty-theme/archive/refs/heads/master.zip"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"
+

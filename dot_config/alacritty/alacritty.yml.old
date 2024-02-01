@@ -1,7 +1,7 @@
 # TODO Not working atm: wrong schema + syntax issue
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
-import:
-  - ~/.config/alacritty/themes/themes/one_dark.yaml
+# import:
+#   - ~/.config/alacritty/themes/themes/one_dark.yaml
 
 # Import additional configuration files
 #

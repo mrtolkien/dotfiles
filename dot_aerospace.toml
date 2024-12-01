@@ -82,6 +82,9 @@ shift-ctrl-alt-backspace = 'focus-monitor next --wrap-around'
 shift-ctrl-alt-equal = 'fullscreen'
 shift-ctrl-alt-1 = 'move-workspace-to-monitor --wrap-around next'
 
+shift-ctrl-alt-rightSquareBracket = 'layout floating tiling' # Kinda unusable without Rectangle...
+shift-ctrl-alt-f20 = 'flatten-workspace-tree'                # Resets
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 ctrl-alt-shift-slash = 'layout tiles horizontal vertical'
 ctrl-alt-shift-backslash = 'layout accordion horizontal vertical'
@@ -98,7 +101,6 @@ cmd-ctrl-alt-shift-down = 'move down'
 cmd-ctrl-alt-shift-up = 'move up'
 cmd-ctrl-alt-shift-right = 'move right'
 
-# TODO ADD JOIN (mode?)
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 ctrl-alt-shift-minus = 'resize smart -100'    # 5% of total screen size
@@ -127,7 +129,7 @@ shift-ctrl-alt-s = 'workspace slack'
 shift-ctrl-alt-t = 'workspace terminal'
 shift-ctrl-alt-u = 'workspace u'
 shift-ctrl-alt-v = 'workspace v'
-shift-ctrl-alt-w = 'workspace work'
+shift-ctrl-alt-w = 'workspace w'
 shift-ctrl-alt-x = 'workspace x'
 shift-ctrl-alt-y = 'workspace y'
 shift-ctrl-alt-z = 'workspace z'
@@ -155,28 +157,16 @@ cmd-shift-ctrl-alt-s = 'move-node-to-workspace slack'
 cmd-shift-ctrl-alt-t = 'move-node-to-workspace terminal'
 cmd-shift-ctrl-alt-u = 'move-node-to-workspace u'
 cmd-shift-ctrl-alt-v = 'move-node-to-workspace v'
-cmd-shift-ctrl-alt-w = 'move-node-to-workspace work'
+cmd-shift-ctrl-alt-w = 'move-node-to-workspace w'
 cmd-shift-ctrl-alt-x = 'move-node-to-workspace x'
 cmd-shift-ctrl-alt-y = 'move-node-to-workspace y'
 cmd-shift-ctrl-alt-z = 'move-node-to-workspace z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-cmd-ctrl-alt-esc = 'mode service' # TODO Better access (double tap?)
+ctrl-shift-alt-leftSquareBracket = 'mode join'
 
-[mode.service.binding]
-# TODO Remap/think (need reset, floating)
-esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main']                # reset layout
-f = ['layout floating tiling', 'mode main']                # Toggle floating
-backspace = ['close-all-windows-but-current', 'mode main']
-
-
-s = ['move left', 'mode main']
-e = ['move down', 'mode main']
-o = ['move up', 'mode main']
-n = ['move right', 'mode main']
-
-shift-s = ['join-with left', 'mode main']
-shift-e = ['join-with down', 'mode main']
-shift-o = ['join-with up', 'mode main']
-shift-n = ['join-with right', 'mode main']
+[mode.join.binding]
+ctrl-alt-shift-left = ['join-with left', 'mode main']
+ctrl-alt-shift-down = ['join-with down', 'mode main']
+ctrl-alt-shift-up = ['join-with up', 'mode main']
+ctrl-alt-shift-right = ['join-with right', 'mode main']

@@ -75,9 +75,21 @@ outer.right = 2
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 [mode.main.binding]
+#################
+# APPS
+#################
+ctrl-alt-a = 'exec-and-forget alacritty msg create-window || open -na alacritty'
+ctrl-alt-z = 'exec-and-forget open -n -a "Zen Browser"'
+ctrl-alt-v = 'exec-and-forget code -n || open -na "Visual Studio Code"'
+ctrl-alt-f = 'exec-and-forget open -a "Marta"'
+
+#################
+# FOCUS & MOVE
+#################
 shift-ctrl-alt-tab = 'focus-back-and-forth'
 shift-ctrl-alt-space = 'workspace-back-and-forth'
 shift-ctrl-alt-backspace = 'focus-monitor next --wrap-around'
+shift-ctrl-alt-quote = 'move-mouse window-lazy-center'
 
 shift-ctrl-alt-equal = 'fullscreen'
 shift-ctrl-alt-1 = 'move-workspace-to-monitor --wrap-around next'
@@ -106,6 +118,9 @@ cmd-ctrl-alt-shift-right = 'move right'
 ctrl-alt-shift-minus = 'resize smart -100'    # 5% of total screen size
 ctrl-alt-shift-backtick = 'resize smart +100'
 
+#################
+# WORKSPACES
+#################
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 shift-ctrl-alt-a = 'workspace admin'
 shift-ctrl-alt-b = 'workspace b'
@@ -164,6 +179,7 @@ cmd-shift-ctrl-alt-z = 'move-node-to-workspace z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 ctrl-shift-alt-leftSquareBracket = 'mode join'
+
 
 [mode.join.binding]
 ctrl-alt-shift-left = ['join-with left', 'mode main']

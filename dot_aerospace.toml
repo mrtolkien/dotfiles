@@ -81,7 +81,7 @@ outer.right = 2
 ctrl-alt-a = 'exec-and-forget alacritty msg create-window || open -na alacritty'
 ctrl-alt-z = 'exec-and-forget open -n -a "Zen Browser"'
 ctrl-alt-v = 'exec-and-forget code -n || open -na "Visual Studio Code"'
-ctrl-alt-f = 'exec-and-forget open -a "Marta"'
+ctrl-alt-f = 'exec-and-forget open -a "Nimble Commander"'
 
 #################
 # FOCUS & MOVE
